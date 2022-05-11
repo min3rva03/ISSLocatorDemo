@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00283232282B47C5005EF359 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00283231282B47C5005EF359 /* AppDelegate.swift */; };
-		00283236282B47C5005EF359 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00283235282B47C5005EF359 /* ViewController.swift */; };
+		00283236282B47C5005EF359 /* IssLocatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00283235282B47C5005EF359 /* IssLocatorController.swift */; };
 		00283239282B47C5005EF359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00283237282B47C5005EF359 /* Main.storyboard */; };
 		0028323B282B47C8005EF359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028323A282B47C8005EF359 /* Assets.xcassets */; };
 		0028323E282B47C8005EF359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0028323C282B47C8005EF359 /* LaunchScreen.storyboard */; };
@@ -32,12 +32,15 @@
 		00F1B803282B56610081D99A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B802282B56610081D99A /* QuartzCore.framework */; };
 		00F1B805282B566D0081D99A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B804282B566D0081D99A /* SystemConfiguration.framework */; };
 		00F1B807282B56740081D99A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B806282B56740081D99A /* UIKit.framework */; };
+		00F1B80A282B5B840081D99A /* IssLocatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1B809282B5B840081D99A /* IssLocatorViewModel.swift */; };
+		00F1B80C282B5BA40081D99A /* IssLocatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1B80B282B5BA40081D99A /* IssLocatorModel.swift */; };
+		00F1B80F282B5BEB0081D99A /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1B80E282B5BEB0081D99A /* ServiceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0028322E282B47C5005EF359 /* IssLocator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IssLocator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00283231282B47C5005EF359 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00283235282B47C5005EF359 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00283235282B47C5005EF359 /* IssLocatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorController.swift; sourceTree = "<group>"; };
 		00283238282B47C5005EF359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0028323A282B47C8005EF359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0028323D282B47C8005EF359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +65,9 @@
 		00F1B802282B56610081D99A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		00F1B804282B566D0081D99A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		00F1B806282B56740081D99A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		00F1B809282B5B840081D99A /* IssLocatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorViewModel.swift; sourceTree = "<group>"; };
+		00F1B80B282B5BA40081D99A /* IssLocatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorModel.swift; sourceTree = "<group>"; };
+		00F1B80E282B5BEB0081D99A /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,10 +120,11 @@
 		00283230282B47C5005EF359 /* IssLocator */ = {
 			isa = PBXGroup;
 			children = (
+				00F1B80D282B5BC50081D99A /* ISSServiceManager */,
+				00F1B808282B5B130081D99A /* ISSLocatorModule */,
 				00F1B7E5282B55890081D99A /* GoogleMaps.bundle */,
 				00F1B7DE282B54870081D99A /* Frameworks */,
 				00283231282B47C5005EF359 /* AppDelegate.swift */,
-				00283235282B47C5005EF359 /* ViewController.swift */,
 				00283237282B47C5005EF359 /* Main.storyboard */,
 				0028323A282B47C8005EF359 /* Assets.xcassets */,
 				0028323C282B47C8005EF359 /* LaunchScreen.storyboard */,
@@ -157,6 +164,24 @@
 				00F1B7E8282B55CE0081D99A /* Accelerate.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		00F1B808282B5B130081D99A /* ISSLocatorModule */ = {
+			isa = PBXGroup;
+			children = (
+				00283235282B47C5005EF359 /* IssLocatorController.swift */,
+				00F1B809282B5B840081D99A /* IssLocatorViewModel.swift */,
+				00F1B80B282B5BA40081D99A /* IssLocatorModel.swift */,
+			);
+			path = ISSLocatorModule;
+			sourceTree = "<group>";
+		};
+		00F1B80D282B5BC50081D99A /* ISSServiceManager */ = {
+			isa = PBXGroup;
+			children = (
+				00F1B80E282B5BEB0081D99A /* ServiceManager.swift */,
+			);
+			path = ISSServiceManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,8 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00283236282B47C5005EF359 /* ViewController.swift in Sources */,
+				00F1B80C282B5BA40081D99A /* IssLocatorModel.swift in Sources */,
+				00F1B80A282B5B840081D99A /* IssLocatorViewModel.swift in Sources */,
+				00283236282B47C5005EF359 /* IssLocatorController.swift in Sources */,
 				00283232282B47C5005EF359 /* AppDelegate.swift in Sources */,
+				00F1B80F282B5BEB0081D99A /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
