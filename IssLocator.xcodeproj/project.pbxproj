@@ -12,6 +12,7 @@
 		00283239282B47C5005EF359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00283237282B47C5005EF359 /* Main.storyboard */; };
 		0028323B282B47C8005EF359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028323A282B47C8005EF359 /* Assets.xcassets */; };
 		0028323E282B47C8005EF359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0028323C282B47C8005EF359 /* LaunchScreen.storyboard */; };
+		007026C9282D677000ECA69F /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007026C8282D677000ECA69F /* Bindable.swift */; };
 		00F1B7E0282B54AD0081D99A /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */; };
 		00F1B7E3282B54C80081D99A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7E1282B54C60081D99A /* GoogleMaps.framework */; };
 		00F1B7E4282B54C80081D99A /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7E2282B54C80081D99A /* GoogleMapsCore.framework */; };
@@ -45,6 +46,7 @@
 		0028323A282B47C8005EF359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0028323D282B47C8005EF359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0028323F282B47C8005EF359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		007026C8282D677000ECA69F /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		00F1B7E1282B54C60081D99A /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		00F1B7E2282B54C80081D99A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		00283230282B47C5005EF359 /* IssLocator */ = {
 			isa = PBXGroup;
 			children = (
+				007026C7282D675200ECA69F /* Helpers */,
 				00F1B80D282B5BC50081D99A /* ISSServiceManager */,
 				00F1B808282B5B130081D99A /* ISSLocatorModule */,
 				00F1B7E5282B55890081D99A /* GoogleMaps.bundle */,
@@ -131,6 +134,38 @@
 				0028323F282B47C8005EF359 /* Info.plist */,
 			);
 			path = IssLocator;
+			sourceTree = "<group>";
+		};
+		007026C7282D675200ECA69F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				007026C8282D677000ECA69F /* Bindable.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		007026CA282D906800ECA69F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				00F1B80B282B5BA40081D99A /* IssLocatorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		007026CB282D906E00ECA69F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				00283235282B47C5005EF359 /* IssLocatorController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		007026CC282D907700ECA69F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				00F1B809282B5B840081D99A /* IssLocatorViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		00F1B7DE282B54870081D99A /* Frameworks */ = {
@@ -169,9 +204,9 @@
 		00F1B808282B5B130081D99A /* ISSLocatorModule */ = {
 			isa = PBXGroup;
 			children = (
-				00283235282B47C5005EF359 /* IssLocatorController.swift */,
-				00F1B809282B5B840081D99A /* IssLocatorViewModel.swift */,
-				00F1B80B282B5BA40081D99A /* IssLocatorModel.swift */,
+				007026CC282D907700ECA69F /* ViewModel */,
+				007026CB282D906E00ECA69F /* View */,
+				007026CA282D906800ECA69F /* Model */,
 			);
 			path = ISSLocatorModule;
 			sourceTree = "<group>";
@@ -258,6 +293,7 @@
 			files = (
 				00F1B80C282B5BA40081D99A /* IssLocatorModel.swift in Sources */,
 				00F1B80A282B5B840081D99A /* IssLocatorViewModel.swift in Sources */,
+				007026C9282D677000ECA69F /* Bindable.swift in Sources */,
 				00283236282B47C5005EF359 /* IssLocatorController.swift in Sources */,
 				00283232282B47C5005EF359 /* AppDelegate.swift in Sources */,
 				00F1B80F282B5BEB0081D99A /* ServiceManager.swift in Sources */,
