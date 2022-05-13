@@ -15,6 +15,7 @@
 		00486138282EC17600B3E494 /* locationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00486137282EC17600B3E494 /* locationCell.swift */; };
 		007026C9282D677000ECA69F /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007026C8282D677000ECA69F /* Bindable.swift */; };
 		007026CE282D9F4A00ECA69F /* IssLocatorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007026CD282D9F4A00ECA69F /* IssLocatorTableController.swift */; };
+		00732D59282F01D10077FAEC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 00732D58282F01D10077FAEC /* README.md */; };
 		00F1B7E0282B54AD0081D99A /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */; };
 		00F1B7E3282B54C80081D99A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7E1282B54C60081D99A /* GoogleMaps.framework */; };
 		00F1B7E4282B54C80081D99A /* GoogleMapsCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7E2282B54C80081D99A /* GoogleMapsCore.framework */; };
@@ -51,6 +52,7 @@
 		00486137282EC17600B3E494 /* locationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationCell.swift; sourceTree = "<group>"; };
 		007026C8282D677000ECA69F /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		007026CD282D9F4A00ECA69F /* IssLocatorTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTableController.swift; sourceTree = "<group>"; };
+		00732D58282F01D10077FAEC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
 		00F1B7E1282B54C60081D99A /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		00F1B7E2282B54C80081D99A /* GoogleMapsCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsCore.framework; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		00283225282B47C5005EF359 = {
 			isa = PBXGroup;
 			children = (
+				00732D58282F01D10077FAEC /* README.md */,
 				00283230282B47C5005EF359 /* IssLocator */,
 				0028322F282B47C5005EF359 /* Products */,
 				00F1B7E7282B55CE0081D99A /* Frameworks */,
@@ -293,6 +296,7 @@
 			files = (
 				0028323E282B47C8005EF359 /* LaunchScreen.storyboard in Resources */,
 				0028323B282B47C8005EF359 /* Assets.xcassets in Resources */,
+				00732D59282F01D10077FAEC /* README.md in Resources */,
 				00283239282B47C5005EF359 /* Main.storyboard in Resources */,
 				00F1B7E6282B55890081D99A /* GoogleMaps.bundle in Resources */,
 			);
