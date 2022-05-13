@@ -11,6 +11,7 @@ import GoogleMaps
 class IssLocatorController: UIViewController {
     
     private lazy var issLocatorVM = IssLocatorViewModel()
+    let showTableVC = IssLocatorTableController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,8 @@ class IssLocatorController: UIViewController {
         ])
         
         let marker = GMSMarker()
-        
+
+        self.issLocatorVM.requestLocation()
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
             print(timer)
             self.issLocatorVM.requestLocation()
@@ -36,25 +38,27 @@ class IssLocatorController: UIViewController {
         }
         
         issLocatorVM.issModel.bind{ [weak self] issModel in
-            
             guard let self = self else { return }
             
             DispatchQueue.main.async {
-                
                 if let latitude = self.issLocatorVM.issModel.value?.iss_position.latitude, let longitude = self.issLocatorVM.issModel.value?.iss_position.longitude{
                     let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(latitude) ?? 0.0), longitude: CLLocationDegrees(Float(longitude) ?? 0.0))
-                    
                     let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 2.0)
                     print("🚨" ,coordinate.latitude, coordinate.longitude)
                     
                     mapView.camera = camera
-                    
                     marker.position = coordinate
                     marker.title = "Coordenadas, Latitud: \(coordinate.latitude), Longitud: \(coordinate.longitude)"
+                    marker.icon = UIImage(named: "markerIcon")
                     marker.map = mapView
                 }
             }
         }
+    }
+    
+    @IBAction func rightBarButtonTapped(_ sender: UIBarButtonItem) {
+        showTableVC.vm = issLocatorVM
+        show(showTableVC, sender: Any?.self)
     }
 }
 

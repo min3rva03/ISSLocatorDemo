@@ -12,7 +12,7 @@ protocol ServiceManagerDelegate {
 }
 
 struct ServiceManager {
-
+    
     var delegate : ServiceManagerDelegate?
     
     func sendRequest(urlString : String) {
@@ -25,7 +25,7 @@ struct ServiceManager {
                     return
                 }
                 if let safeData = data {
-                        delegate?.serviceResponse(safeData, nil)
+                    delegate?.serviceResponse(safeData, nil)
                 }else{
                     delegate?.serviceResponse(nil, nil)
                 }
@@ -44,7 +44,7 @@ struct ServiceManager {
                     return
                 }
                 if let safeData = data {
-                        handler(safeData, nil)
+                    handler(safeData, nil)
                 }else{
                     handler(nil, nil)
                 }
@@ -53,4 +53,3 @@ struct ServiceManager {
         }
     }
 }
-
