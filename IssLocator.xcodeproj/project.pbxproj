@@ -12,6 +12,7 @@
 		00283239282B47C5005EF359 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00283237282B47C5005EF359 /* Main.storyboard */; };
 		0028323B282B47C8005EF359 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0028323A282B47C8005EF359 /* Assets.xcassets */; };
 		0028323E282B47C8005EF359 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0028323C282B47C8005EF359 /* LaunchScreen.storyboard */; };
+		00486138282EC17600B3E494 /* locationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00486137282EC17600B3E494 /* locationCell.swift */; };
 		007026C9282D677000ECA69F /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007026C8282D677000ECA69F /* Bindable.swift */; };
 		007026CE282D9F4A00ECA69F /* IssLocatorTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007026CD282D9F4A00ECA69F /* IssLocatorTableController.swift */; };
 		00F1B7E0282B54AD0081D99A /* GoogleMapsBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */; };
@@ -47,6 +48,7 @@
 		0028323A282B47C8005EF359 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0028323D282B47C8005EF359 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0028323F282B47C8005EF359 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00486137282EC17600B3E494 /* locationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationCell.swift; sourceTree = "<group>"; };
 		007026C8282D677000ECA69F /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
 		007026CD282D9F4A00ECA69F /* IssLocatorTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssLocatorTableController.swift; sourceTree = "<group>"; };
 		00F1B7DF282B54AD0081D99A /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = IssLocator;
 			sourceTree = "<group>";
 		};
+		00486136282EC12E00B3E494 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				00486137282EC17600B3E494 /* locationCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		007026C7282D675200ECA69F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +167,7 @@
 		007026CB282D906E00ECA69F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				00486136282EC12E00B3E494 /* Cells */,
 				00283235282B47C5005EF359 /* IssLocatorController.swift */,
 				007026CD282D9F4A00ECA69F /* IssLocatorTableController.swift */,
 			);
@@ -300,6 +311,7 @@
 				007026C9282D677000ECA69F /* Bindable.swift in Sources */,
 				00283236282B47C5005EF359 /* IssLocatorController.swift in Sources */,
 				00283232282B47C5005EF359 /* AppDelegate.swift in Sources */,
+				00486138282EC17600B3E494 /* locationCell.swift in Sources */,
 				00F1B80F282B5BEB0081D99A /* ServiceManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

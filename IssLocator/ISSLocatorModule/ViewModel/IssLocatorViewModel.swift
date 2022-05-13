@@ -19,6 +19,10 @@ public class IssLocatorViewModel : ServiceManagerDelegate {
         serviceManager.sendRequest(urlString: "http://api.open-notify.org/iss-now.json")
     }
     
+    func getInitialData(){
+        arrLocation = self.getUsrDefaults() ?? []
+    }
+    
     func serviceResponse(_ responseData: Data?, _ error: Error?) {
         if let modelResponse = self.parseJSONLocator(IssLocatorData: responseData ?? Data()) {
             arrLocation.append(modelResponse)
@@ -39,9 +43,15 @@ public class IssLocatorViewModel : ServiceManagerDelegate {
     }
     
     func setUsrDefaults(arr:[IssLocatorModel]) {
-        if let encodedData = try? NSKeyedArchiver.archivedData(withRootObject: arr, requiringSecureCoding: false){
-            UserDefaults.standard.setValue(encodedData, forKey: userDefaultsKey)
+        do{
+            let jsonEncoder = JSONEncoder()
+            let arrEncoded = try jsonEncoder.encode(arr)
+            UserDefaults.standard.setValue(arrEncoded, forKey: userDefaultsKey)
             UserDefaults.standard.synchronize()
+            print("Se guardo en user defaults")
+        }
+        catch{
+            print("Error al guardar en userdefaults: \(error.localizedDescription)")
         }
     }
     
@@ -50,11 +60,15 @@ public class IssLocatorViewModel : ServiceManagerDelegate {
     }
     
     func getUsrDefaults() -> [IssLocatorModel]? {
-        if let decodedData  = UserDefaults.standard.object(forKey: userDefaultsKey) as? Data,
-           let decodedArrItems = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decodedData) as? [IssLocatorModel]{
-            return decodedArrItems
+        guard let arrData = UserDefaults.standard.object(forKey: userDefaultsKey) as? Data else{ return nil }
+        do {
+            let jsonDecoder = JSONDecoder()
+            let arrModels = try jsonDecoder.decode([IssLocatorModel].self, from: arrData)
+            return arrModels
+        } catch let error {
+            print("Ocurrio un error al obtener data de userdefaults: \(error.localizedDescription)")
+            return nil
         }
-        return nil
     }
     
     func getnumberOfRows() -> Int {
@@ -63,6 +77,15 @@ public class IssLocatorViewModel : ServiceManagerDelegate {
         }
         return 0
     }
+    
+    
+    func getCellForRow(index :Int) -> IssLocatorModel? {
+        guard let dataUsr = getUsrDefaults() else {
+            return nil
+        }
+        return dataUsr[index]
+    }
+    
     
     //Request location using closure
     //    func requestIssLocationWithClosure(){

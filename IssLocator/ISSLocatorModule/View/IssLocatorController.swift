@@ -11,11 +11,10 @@ import GoogleMaps
 class IssLocatorController: UIViewController {
     
     private lazy var issLocatorVM = IssLocatorViewModel()
-    let showTableVC = IssLocatorTableController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "🛰 International Space Station"
+        self.title = "🛰 ISS"
         
         let camera = GMSCameraPosition.camera(withLatitude: 0.0, longitude: 0.0, zoom: 2.0)
         let mapView = GMSMapView.map(withFrame: self.view.frame, camera: camera)
@@ -29,7 +28,7 @@ class IssLocatorController: UIViewController {
         ])
         
         let marker = GMSMarker()
-
+        self.issLocatorVM.getInitialData()
         self.issLocatorVM.requestLocation()
         Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
             print(timer)
@@ -41,15 +40,16 @@ class IssLocatorController: UIViewController {
             guard let self = self else { return }
             
             DispatchQueue.main.async {
-                if let latitude = self.issLocatorVM.issModel.value?.iss_position.latitude, let longitude = self.issLocatorVM.issModel.value?.iss_position.longitude{
+                if let latitude = self.issLocatorVM.issModel.value?.iss_position?.latitude, let longitude = self.issLocatorVM.issModel.value?.iss_position?.longitude{
                     let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(Float(latitude) ?? 0.0), longitude: CLLocationDegrees(Float(longitude) ?? 0.0))
                     let camera = GMSCameraPosition.camera(withLatitude: coordinate.latitude, longitude: coordinate.longitude, zoom: 2.0)
                     print("🚨" ,coordinate.latitude, coordinate.longitude)
                     
                     mapView.camera = camera
                     marker.position = coordinate
-                    marker.title = "Coordenadas, Latitud: \(coordinate.latitude), Longitud: \(coordinate.longitude)"
-                    marker.icon = UIImage(named: "markerIcon")
+                    marker.title = "Coordenadas"
+                    marker.snippet = "Latitud: \(coordinate.latitude), Longitud: \(coordinate.longitude)"
+                    marker.icon = UIImage(named: "marker")
                     marker.map = mapView
                 }
             }
@@ -57,8 +57,11 @@ class IssLocatorController: UIViewController {
     }
     
     @IBAction func rightBarButtonTapped(_ sender: UIBarButtonItem) {
-        showTableVC.vm = issLocatorVM
-        show(showTableVC, sender: Any?.self)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle(for: IssLocatorController.self))
+        if let vc = storyboard.instantiateViewController(withIdentifier: "IssLocatorTableController") as? IssLocatorTableController{
+            vc.vm = issLocatorVM
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }
 
